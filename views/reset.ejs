@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CMRA | Reset Password</title>
+  <link rel="stylesheet" href="/reset.css">
+</head>
+<body>
+
+  <%- include('partials/messages'); -%>
+
+  <div class="background">
+    <div class="shape"></div>
+      <div class="shape"></div>
+        </div>
+        <h1>Course Material Repository App</h1>
+        <form action="/reset" method="POST">
+      
+            <h2 >Reset Password</h2>
+            <label for="email">Email</label>
+            <input type="email"
+             name="email" 
+             placeholder="Enter Email"
+              autocomplete="off"              
+              required
+               />
+          </div>
+          <button type="submit">Send Request</button>
+        </form>
+     
+</body>
+</html>

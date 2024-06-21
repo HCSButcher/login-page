@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CMRA | <%= title %> </title>
+  <link rel="stylesheet" href="/signup.css">
+  </head>
+  <body>
+    <%- include('partials/messages'); -%>    
+    <div class="background">
+      <div class="shape"></div>
+        <div class="shape"></div>
+          </div>        
+         <h1>Course Material Repositry App</h1>
+         <form  action="/signup" method="POST">
+           <div class="form-group">
+            <h3>Sign up to create an account</h3>
+            <label for="name">Name</label>
+            <input 
+             type="name" 
+             id="name" 
+             name="name" 
+             placeholder="Enter name"
+             autocomplete="off"              
+             value="<%= typeof name != 'undefined' ? name : '' %>"
+             />  
+           </div>
+             <div class="form-group">
+               <label for="Email">Email</label>
+               <input 
+               type="email" 
+               id="email" 
+               name="email" 
+               placeholder="Enter Email"
+               autocomplete="off"                
+               value="<%= typeof email != 'undefined' ? name : '' %>"
+               />  
+            </div>   
+             <div class="form-group">            
+               <label for="password">Password</label>
+               <input 
+               type="password" 
+               id="password" 
+               name="password" 
+               placeholder="Enter Password" 
+               autocomplete="off"              
+             value="<%= typeof password != 'undefined' ? password : '' %>"
+             />    
+           </div>         
+            <div class="form-group">            
+              <label for="password2">Password</label>
+             <input 
+             type="password" 
+             id="password2" 
+             name="password2" 
+             placeholder="Confirm Password" 
+             autocomplete="off"              
+             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+             /> 
+           </div>       
+            <button type="submit"> Create Account </button>
+            <p class="signup-p"> Already have an account <a href="/login">login</a> </p>
+           </form>
+                   
+ </body>
+</html>

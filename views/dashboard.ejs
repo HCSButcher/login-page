@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> CMRA | <%= title %> </title>
+  <link rel="stylesheet" href="/dashboard.css">
+  </head>
+ <body>
+  <%- include('partials/messages'); -%>
+  <div class="background">
+    <div class="shape"></div>
+      <div class="shape"></div>
+        </div>
+   <h1>Welcome <%= user.name %> to Course Material Repositry App </h1>
+   <p><a href="/details">Click here to add more details</a> </p>
+   <a href="/logout">Logout</a>
+   <div class="background">
+    <div class="shape"></div>
+      <div class="shape"></div>
+<form action="/search" method="GET">
+  <div class="form-group">
+  <label for="registration_number">Registration Number</label>
+ <input type="text" 
+  id="registration_number" 
+  name="registration_number" 
+  placeholder="Enter your registration_number" 
+  autocomplete="off"              
+value="<%= typeof registration_number != 'undefined' ? registration_number : '' %>"
+/>
+</div>
+<button type="submit"> Search</button>
+</form>
+
+<% if (error_msg) { %>
+  <div class="alert alert-danger"><%= error_msg %></div>
+<% } %>
+
+<% if (searchResults && searchResults.length > 0) { %>
+  <h2>Search Results</h2>
+  <ul>
+    <% searchResults.forEach(result => { %>
+      <li class="dashli"><%= result.name %> - <%= result.phone_number %></li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p class="dash">No search results found.</p>
+<% } %>
+   <%- include ('./partials/footer') -%>
+  </body>
+</html>
